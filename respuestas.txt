@@ -1,0 +1,81 @@
+
+¿Qué propósito cumple el archivo main.ts en un proyecto NestJS y por qué es crucial en la configuración inicial? 
+
+- main.ts: Punto de entrada de la aplicación. Configura e inicia la aplicación NestJS.
+
+¿Qué diferencia existe entre app.module.ts y app.controller.ts? ¿Cómo se relacionan estos archivos con la modularidad y la estructura de la aplicación? 
+
+- app.module.ts: Define el módulo raíz de la aplicación. Organiza y agrupa controladores y servicios.
+
+- app.controller.ts: Maneja las solicitudes HTTP. Define las rutas y cómo se responden las peticiones.
+
+Relación: 
+- main.ts arranca la aplicación.
+- app.module.ts organiza la estructura de la aplicación.
+- app.controller.ts gestiona las rutas y respuestas.
+
+
+¿Por qué crees que es importante modularizar la aplicación separando funcionalidades en diferentes módulos?
+
+porque tiene una buena Organización que Divide la aplicación en partes manejables y
+Facilita la reutilización de componentes.
+
+¿Cómo crees que afecta la modularidad al mantenimiento y escalabilidad de la aplicación?
+
+en la parte del mantenimiento los Cambios en un módulo no afectan a otros y es
+escalable porque se pueden agregar nuevas funcionalidades más fácilmente.
+
+Despues de crear los archivos de los módulos, ¿qué archivos se generan y cómo se relacionan con los módulos creados?
+
+1. module.ts: Define y organiza el módulo y sus dependencias.
+2. controller.ts: Maneja las solicitudes HTTP y define rutas.
+3. service.ts: Contiene la lógica de negocio usada por los controladores.
+Relación:
+- Controladores usan servicios para la lógica.
+- Módulos agrupan controladores y servicios.
+
+
+¿Qué sucede si defines incorrectamente un decorador en un controlador? ¿Cómo afecta esto a la funcionalidad del endpoint?
+- se genera Errores en la Ruta ya que el endpoint puede no funcionar o generar errores 404.
+- tambien se generan Errores en la Respuesta esto se debe a los Problemas con el manejo de datos y respuestas incorrectas.
+
+¿Por qué es importante manejar rutas dinámicas (por ejemplo, @Get(':id')) en aplicaciones que interactúan con bases de datos?
+
+- porque Permiten operar sobre registros individuales en la base de datos usando identificadores únicos.
+- por que hay mayor flexibilidad ya que facilitan la gestión de diferentes recursos de manera eficiente.
+
+
+¿Qué ventajas tiene manejar la lógica de negocio en servicios en lugar de controladores?
+
+- Separación de Responsabilidades: Los controladores manejan solicitudes y los servicios gestionan la lógica de negocio.
+- Reusabilidad y Mantenimiento: Los servicios pueden ser reutilizados y actualizados sin modificar los controladores.
+- Escalabilidad: en este caso se facilita agregar o modificar funcionalidades sin cambiar los controladores.
+
+¿Cómo se relaciona la inyección de dependencias con la modularidad y la capacidad de prueba de la aplicación?
+
+- La Modularidad Facilita la organización de código en módulos independientes que pueden importar otros módulos según sea necesario.
+- La capacidad de Prueba permite crear instancias controladas para pruebas, aislando componentes y simulando dependencias fácilmente.
+
+
+¿Por qué es crucial validar los datos de entrada en una aplicación que maneja transacciones financieras?
+- por la seguridad esta previene ataques y compromete la integridad de los datos.
+- por la precisión ya que asegura que los datos sean correctos, evitando errores en transacciones.
+- y por la prevención de Errores que Evita fallos en el sistema por datos incorrectos.
+
+¿Qué podría suceder si un decorador está mal colocado o si no se aplican los pipes correctamente?
+
+- puede generar Errores en Rutas y las estas pueden no funcionar correctamente.
+- Fallos en Validación: Los datos inválidos pueden pasar al sistema.
+- Comportamiento Inesperado: Puede causar errores en la lógica de la aplicación.
+
+
+¿Cómo impacta el manejo adecuado de excepciones en la experiencia del usuario y en la seguridad de la aplicación?
+
+- en la experiencia del Usuario los mensajes de error claros y consistentes mejoran la comprensión y usabilidad.
+- la seguridad evita la filtración de información interna y controla errores para reducir riesgos de seguridad.
+
+¿Por qué es importante tener un manejo centralizado de excepciones en una aplicación NestJS?
+
+- Consistencia: Maneja errores de manera uniforme en toda la aplicación.
+- Mantenimiento: Simplifica la actualización y gestión de la lógica de errores.
+- Código Limpio: Reduce la repetición y mantiene el código organizado.
